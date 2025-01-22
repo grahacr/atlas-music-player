@@ -6,13 +6,11 @@ import PlayControls from "./PlayControls";
 
 export default function CurrentlyPlaying() {
     return (
-        <div className="flex-1 space-y-4">
-        <div className="bg-gray-100 p-4 rounded-lg">
+        <div className="flex-1 flex flex-col">
             <CoverArt />
-            <SongTitle />
-        </div>
         
-        <div className="bg-gray-100 p-4 rounded-lg">
+        <div className="flex flex-col justify-between space-y-4">
+            <SongTitle />
             <PlayControls />
             <VolumeControls />
         </div>
