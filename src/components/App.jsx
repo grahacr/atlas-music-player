@@ -3,7 +3,7 @@ import MusicPlayer from "./MusicPlayer";
 
 function App() {
   return (
-    <div className="bg-darkPink">
+    <div className="dark:bg-darkPink bg-lightpink">
       <MusicPlayer />
       <Footer />
     </div>
