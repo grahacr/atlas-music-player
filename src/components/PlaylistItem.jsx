@@ -1,6 +1,6 @@
 export default function PlaylistItem(props) {
     return (
-        <div className="grid grid-cols-2 active:bg-light">
+        <div className="grid grid-cols-2 hover:bg-light">
             <h2 className="font-medium text-dark">{props.songtitle}</h2>
                 <div className="justify-items-end">
                     <h3 className="text-sm text-gray-500 text-dark">{props.time}</h3>
