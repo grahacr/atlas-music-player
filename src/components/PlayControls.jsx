@@ -8,8 +8,8 @@ export default function PlayControls() {
     return (
         <div className="flex justify-center items-center space-x-20">
             <h1>1x</h1>
-            <img src={rewind} alt="rewind" />
-            <img src={PlayImage} alt="play" />
+            <img src={rewind} alt="rewind" className="fill-black" />
+            <img src={PlayImage} alt="play" className="fill-black" />
             <img src={FastForward} alt="fastforward" />
             <img src={shuffle} alt="shuffle" />
 
