@@ -5,7 +5,7 @@ export default function CoverArt() {
         <img
         src="../src/assets/placeholder.svg"
         alt="song image"
-        className="rounded-lg size-max"
+        className="rounded-lg p-6"
         />
     </div>
     )

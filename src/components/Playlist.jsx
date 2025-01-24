@@ -4,8 +4,8 @@ import PlaylistItem from "./PlaylistItem"
 
 export default function Playlist() {
     return (
-        <div className="flex flex-col bg-white p-2 rounded-lg">
-            <h4 className="font-bold pb-2">Playlist</h4>
+        <div className="flex flex-col bg-white p-2 bg-lightpink">
+            <h4 className="font-bold pb-2 text-dark">Playlist</h4>
             <PlaylistItem songtitle="Power Play" artist="Etta James" time="5:55" />
             <PlaylistItem songtitle="No One Dies From Love" artist="Tove Lo" time="8:02"/>
             <PlaylistItem songtitle="Pinch Me" artist="Barenaked Ladies" time="3:01" />

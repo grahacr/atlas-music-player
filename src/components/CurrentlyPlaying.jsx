@@ -6,7 +6,7 @@ import PlayControls from "./PlayControls";
 
 export default function CurrentlyPlaying() {
     return (
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col bg-lightpink p-2">
             <CoverArt />
         
         <div className="flex flex-col justify-between space-y-4">

@@ -3,7 +3,7 @@ import volume from "../assets/volume.png";
 
 export default function VolumeControls() {
     return (
-        <div className="flex justify-center items-center w-full">
+        <div className="flex justify-center items-center w-full p-6">
             <img src={volume} />
             <input
                 type="range"
