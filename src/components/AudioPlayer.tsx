@@ -14,7 +14,12 @@ export default function AudioPlayer({ songId, isPlaying }: AudioPlayerProps) {
         if (songId) {
             const fetchAudioUrl = async () => {
                 const response = await fetchSong(songId);
-                setAudioUrl(response.song);
+                if (response !== null) {
+                    setAudioUrl(response.song);
+                } else {
+                    console.error('Error retreiving reponse');
+                }
+
             };
             fetchAudioUrl();
         }
