@@ -12,8 +12,6 @@ export default function PlayControls() {
             <img src={PlayImage} alt="play" />
             <img src={FastForward} alt="fastforward" />
             <img src={shuffle} alt="shuffle" />
-
-
         </div>
     );
 }
