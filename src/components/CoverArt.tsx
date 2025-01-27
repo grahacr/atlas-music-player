@@ -1,9 +1,13 @@
 // covert art component renders song image
-export default function CoverArt() {
+interface CoverArtProps {
+    cover: string;
+}
+
+export default function CoverArt({ cover }: CoverArtProps) {
     return (
     <div className="flex pl-6">
         <img
-        src="../src/assets/etta.jpg"
+        src={cover}
         alt="song image"
         className="rounded-lg p-6 w-[600px] h-[500px]"
         />
