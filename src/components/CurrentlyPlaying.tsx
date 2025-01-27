@@ -1,37 +1,35 @@
-import { useEffect, useState } from "react";
-import { fetchSong, Song } from "../api";
+import { useState } from "react";
 import VolumeControls from "./VolumeControls";
 import CoverArt from "./CoverArt";
 import SongTitle from "./SongTitle";
+import AudioPlayer from "./AudioPlayer";
 import PlayControls from "./PlayControls";
+import { Song } from "../api";
 
-interface CurrentlyPlayingProps {
-    songId: string | null;
+type CurrentlyPlayingProps = {
+    song: Song | null;
 }
 
-export default function CurrentlyPlaying({ songId }: CurrentlyPlayingProps) {
-    const [currentSong, setCurrentSong] = useState<Song | null>(null);
+export default function CurrentlyPlaying({ song }: CurrentlyPlayingProps) {
+    
+  const [isPlaying, setIsPlaying] = useState(false);
 
-    useEffect(() => {
-        if (songId) {
-            const getSong = async () => {
-                const song = await fetchSong(songId);
-                setCurrentSong(song);
-            };
-            getSong();
-        }
-    }, [songId]);
+  const onTogglePlayPause = () => {
+    setIsPlaying((prev) => !prev);
+  };
 
-    if (!currentSong) {
+    if (!song) {
         return <div>Loading...</div>;
     }
+
     return (
         <div className="flex-1 flex flex-col bg-medium dark:bg-dark h-fill">
-            <CoverArt cover={currentSong.cover}/>
+            <CoverArt cover={song.cover}/>
         
         <div className="flex flex-col justify-between dark:bg-lightpink">
-            <SongTitle title={currentSong.title} artist={currentSong.artist}/>
-            <PlayControls />
+            <SongTitle title={song.title} artist={song.artist}/>
+            <PlayControls isPlaying={isPlaying} onTogglePlayPause={onTogglePlayPause}/>
+            <AudioPlayer songId={song.id} isPlaying={isPlaying} />
             <VolumeControls />
         </div>
     </div>
