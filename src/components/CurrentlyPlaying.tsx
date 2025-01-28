@@ -12,7 +12,7 @@ type CurrentlyPlayingProps = {
 
 export default function CurrentlyPlaying({ song }: CurrentlyPlayingProps) {
     
-  const { isPlaying } = usePlayer();
+  const { isPlaying, playBackSpeed } = usePlayer();
 
     if (!song) {
         return <div>Loading...</div>;
@@ -24,7 +24,7 @@ export default function CurrentlyPlaying({ song }: CurrentlyPlayingProps) {
             <div className="flex flex-col justify-between dark:bg-lightpink">
                 <SongTitle title={song.title} artist={song.artist}/>
                 <PlayControls />
-                <AudioPlayer songId={song.id} isPlaying={isPlaying} />
+                <AudioPlayer songId={song.id} isPlaying={isPlaying} playBackSpeed={playBackSpeed} />
                 <VolumeControls />
             </div>
         </div>

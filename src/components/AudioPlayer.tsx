@@ -1,12 +1,14 @@
 import { useEffect, useState, useRef } from "react";
 import { fetchSong } from "../api";
+import { usePlayer } from "./PlayerContext";
 
 type AudioPlayerProps = {
     songId: string | null;
     isPlaying: boolean;
+    playBackSpeed: number;
 };
 
-export default function AudioPlayer({ songId, isPlaying }: AudioPlayerProps) {
+export default function AudioPlayer({ songId, isPlaying, playBackSpeed }: AudioPlayerProps) {
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const [audioURL, setAudioUrl] = useState<string | null>(null);
 
@@ -34,6 +36,12 @@ export default function AudioPlayer({ songId, isPlaying }: AudioPlayerProps) {
             }
         }
     }, [isPlaying, audioURL]);
+
+    useEffect(() => {
+        if (audioRef.current && audioURL) {
+            audioRef.current.playbackRate = playBackSpeed;
+        }
+    })
 
     return (
         <audio ref={audioRef} src={audioURL ?? ""} />

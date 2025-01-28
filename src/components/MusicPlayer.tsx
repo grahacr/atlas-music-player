@@ -6,7 +6,7 @@ import { fetchPlaylist, fetchSong, Song, PlaylistType } from "../api";
 
 
 export default function MusicPlayer() {
-  const { currentSongId, setCurrentSongId, setPlaylist } = usePlayer();
+  const { currentSongId, setCurrentSongId, setPlaylist, playBackSpeed } = usePlayer();
   const [songData, setSongData] = useState<Song | null>(null);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function MusicPlayer() {
 
   return (
     <div className="flex flex-col lg:flex-row gap-6 p-4">
-      <CurrentlyPlaying song={songData} />
+      <CurrentlyPlaying song={songData}/>
 
       <div className="flex-1 rounded-lg">
         <Playlist />
