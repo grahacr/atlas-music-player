@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { usePlayer } from "./PlayerContext";
 import CurrentlyPlaying from "./CurrentlyPlaying";
 import Playlist  from "./Playlist";
-import { fetchPlaylist, fetchSong, Song, PlaylistType } from "../api";
+import { fetchPlaylist, fetchSong, Song } from "../api";
 
 
 export default function MusicPlayer() {

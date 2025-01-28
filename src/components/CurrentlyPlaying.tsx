@@ -29,7 +29,9 @@ export default function CurrentlyPlaying({ song }: CurrentlyPlayingProps) {
                 <AudioPlayer
                 songId={song.id}
                 isPlaying={isPlaying}
-                playBackSpeed={playBackSpeed} />
+                playBackSpeed={playBackSpeed}
+                volume={volume} 
+                />
                 <VolumeControls
                 volume={volume}
                 setVolume={setVolume} />
