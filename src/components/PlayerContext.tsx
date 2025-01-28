@@ -25,7 +25,7 @@ export const PlayerProvider = ({ children }: {children : ReactNode }) => {
     const [playBackSpeed, setPlayBackSpeed] = useState(1);
     const [shuffleEnabled, setShuffleEnabled] = useState(false);
     const [playlist, setPlaylist] = useState<PlaylistType[]>([]);
-
+    
     const togglePlayPause = () => setIsPlaying(prev => !prev);
     const togglePlayBackSpeed = () => {
         setPlayBackSpeed(prev => (prev === 0.5 ? 1 : prev === 1 ? 2 : 0.5));
@@ -39,6 +39,7 @@ export const PlayerProvider = ({ children }: {children : ReactNode }) => {
             }
         }
     };
+
 
     const goForward = () => {
         if (currentSongId && playlist.length > 0) {

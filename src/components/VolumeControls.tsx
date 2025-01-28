@@ -1,16 +1,25 @@
 //Volume Controls component
-import volume from "../assets/volume.png";
+import volumePic from "../assets/volumePic.png";
 
-export default function VolumeControls() {
+type VolumeControlProps = {
+    volume: number;
+    setVolume: (value: number) => void;
+}
+export default function VolumeControls({ volume, setVolume}: VolumeControlProps) {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setVolume(Number(e.target.value));
+    };
+    
     return (
         <div className="flex justify-center items-center w-full p-6">
-            <img src={volume} />
+            <img src={volumePic} />
             <input
                 type="range"
                 min="0"
                 max="100"
-                defaultValue="50"
-                className="w-full"
+                value={volume}
+                onChange={handleChange}
+                className="w-full cursor-pointer"
                 color="gray"
             />
         </div>

@@ -1,4 +1,5 @@
 import { usePlayer } from "./PlayerContext";
+import { useState } from "react";
 import VolumeControls from "./VolumeControls";
 import CoverArt from "./CoverArt";
 import SongTitle from "./SongTitle";
@@ -11,8 +12,9 @@ type CurrentlyPlayingProps = {
 }
 
 export default function CurrentlyPlaying({ song }: CurrentlyPlayingProps) {
-    
-  const { isPlaying, playBackSpeed } = usePlayer();
+     const [volume, setVolume] = useState(50)
+     const { isPlaying, playBackSpeed} = usePlayer();
+
 
     if (!song) {
         return <div>Loading...</div>;
@@ -24,8 +26,13 @@ export default function CurrentlyPlaying({ song }: CurrentlyPlayingProps) {
             <div className="flex flex-col justify-between dark:bg-lightpink">
                 <SongTitle title={song.title} artist={song.artist}/>
                 <PlayControls />
-                <AudioPlayer songId={song.id} isPlaying={isPlaying} playBackSpeed={playBackSpeed} />
-                <VolumeControls />
+                <AudioPlayer
+                songId={song.id}
+                isPlaying={isPlaying}
+                playBackSpeed={playBackSpeed} />
+                <VolumeControls
+                volume={volume}
+                setVolume={setVolume} />
             </div>
         </div>
     );

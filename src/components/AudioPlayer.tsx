@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import { fetchSong } from "../api";
-import { usePlayer } from "./PlayerContext";
 
 type AudioPlayerProps = {
     songId: string | null;
