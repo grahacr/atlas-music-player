@@ -9,7 +9,7 @@ export type Song = {
     song: string;
 };
 
-export interface Playlist {
+export interface PlaylistType {
     id: string;
     title: string;
     artist: string;
@@ -18,7 +18,7 @@ export interface Playlist {
 
 const API_URL = "http://localhost:5173/api/v1";
 
-export const fetchPlaylist = async(): Promise<Playlist[]> => {
+export const fetchPlaylist = async(): Promise<PlaylistType[]> => {
     try {
         const response = await fetch(`${API_URL}/playlist`);
         if (!response.ok) {

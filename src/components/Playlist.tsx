@@ -1,11 +1,6 @@
 // playlist component
-import PlaylistItem from "./PlaylistItem"
-import { Playlist as PlaylistType } from "../api";
-
-type PlaylistProps = {
-    playlist: PlaylistType[];
-    onSongSelect: (songId: string) => void;
-};
+import PlaylistItem from "./PlaylistItem";
+import { usePlayer } from "./PlayerContext";
 
 function formatDuration(seconds: number) {
     const minutes = Math.floor(seconds / 60);
@@ -13,7 +8,9 @@ function formatDuration(seconds: number) {
     return `${minutes}:${remainingSeconds < 10? '0' : ''}${remainingSeconds}`;
 }
 
-export default function Playlist({ playlist, onSongSelect }: PlaylistProps) {
+export default function Playlist() {
+    const { playlist, setCurrentSongId } = usePlayer();
+
     return (
         <div className="flex flex-col p-2 bg-medium dark:bg-dark">
             <h4 className="font-bold text-lg p-2 text-dark dark:text-light">Playlist</h4>
@@ -24,10 +21,10 @@ export default function Playlist({ playlist, onSongSelect }: PlaylistProps) {
                     songtitle={song.title}
                     artist={song.artist}
                     time={formatDuration(song.duration)}
-                    onClick={() => onSongSelect(song.id)}
+                    onClick={() => setCurrentSongId(song.id)}
                     />
                 );
             })}
         </div>
-        );
+    );
 }

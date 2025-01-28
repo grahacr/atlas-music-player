@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
+import { usePlayer } from "./PlayerContext";
 import CurrentlyPlaying from "./CurrentlyPlaying";
-import Playlist from "./Playlist";
-import { fetchPlaylist, fetchSong, Playlist as PlaylistType, Song } from "../api";
+import Playlist  from "./Playlist";
+import { fetchPlaylist, fetchSong, Song, PlaylistType } from "../api";
 
 
 export default function MusicPlayer() {
-  const [playlist, setPlaylist] = useState<PlaylistType[]>([]);
-  const [currentSong, setCurrentSong] = useState<string | null>(null);
+  const { currentSongId, setCurrentSongId, setPlaylist } = usePlayer();
   const [songData, setSongData] = useState<Song | null>(null);
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,33 +15,28 @@ export default function MusicPlayer() {
       setPlaylist(data);
 
       if (data.length > 0) {
-        setCurrentSong(data[0].id);
+        setCurrentSongId(data[0].id);
       }
     };
     fetchData();
-  }, []);
+  }, [setCurrentSongId, setPlaylist]);
 
   useEffect(() => {
-    if (currentSong) {
+    if (currentSongId) {
         const getSong = async () => {
-            const song = await fetchSong(currentSong);
+            const song = await fetchSong(currentSongId);
             setSongData(song);
         };
         getSong();
     }
-}, [currentSong]);
-
-  const songClick = (songId: string) => {
-    setCurrentSong(songId);
-  };
-
+}, [currentSongId]);
 
   return (
     <div className="flex flex-col lg:flex-row gap-6 p-4">
       <CurrentlyPlaying song={songData} />
 
       <div className="flex-1 rounded-lg">
-        <Playlist playlist={playlist} onSongSelect={songClick} />
+        <Playlist />
       </div>
     </div>
     );
