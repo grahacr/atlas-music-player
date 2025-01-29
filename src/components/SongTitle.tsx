@@ -1,6 +1,7 @@
-// songtitle component renders song title
+// songtitle component renders song title using custom song type
+// renders title and artist properties passed as arguments when function is called in currently playing parent prop
 
-interface SongTitleProps {
+type SongTitleProps = {
     title: string;
     artist: string;
 }

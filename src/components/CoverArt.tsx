@@ -1,5 +1,5 @@
-// covert art component renders song image
-interface CoverArtProps {
+// covert art component renders song image dynamically from API
+type CoverArtProps = {
     cover: string;
 }
 

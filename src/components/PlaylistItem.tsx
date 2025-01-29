@@ -1,3 +1,5 @@
+// playlist item child component to playlist parent component, renders individual song
+// utilizes custom type with property params passed from parent component
 type PlaylistItemProps = {
     songtitle: string;
     artist: string;
@@ -5,7 +7,10 @@ type PlaylistItemProps = {
     onClick: () => void;
 }
 
+// default function takes 4 arguments encapsulated in custom type
 export default function PlaylistItem({ songtitle, artist, time, onClick}: PlaylistItemProps) {
+
+    // returns individual playlist item with title, time, and artist formatted with Tailwind
     return (
         <div
         className="grid grid-cols-2 hover:bg-lightpink dark:hover:bg-darkPink p-2 cursor-pointer"
