@@ -19,7 +19,7 @@ export interface PlaylistType {
 }
 
 // base API url
-const API_URL = "http://localhost:5173/api/v1";
+const API_URL = "/api/v1";
 
 // exported variable containing asynchronous function call using fetch to retrieve playlist data in returned promise
 // returns playlist as PlaylistType array, utilizing declared interface above

@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Cover Art image renders with valid cover image 1`] = `
+<div>
+  <div
+    class="flex pl-6"
+  >
+    <img
+      alt="song image"
+      class="rounded-lg p-6 w-[600px] h-[500px]"
+      src="https://utfs.io/f/E9fJnaKtTy1bV09oPkISuh6fWpNsTRlAk1Qj9yqnVzCi32BL"
+    />
+  </div>
+</div>
+`;
+
+exports[`Cover art renders with a different cover image 1`] = `
+<div>
+  <div
+    class="flex pl-6"
+  >
+    <img
+      alt="song image"
+      class="rounded-lg p-6 w-[600px] h-[500px]"
+      src="https://utfs.io/f/E9fJnaKtTy1bdFkaBz4G9CJywD7oVn1hRLQAuEbf8xqkt34N"
+    />
+  </div>
+</div>
+`;
