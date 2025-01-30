@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`default value of volume is 50 1`] = `
+<div>
+  <div
+    class="flex justify-center items-center w-full p-6"
+  >
+    <img
+      src="/src/assets/volumePic.png"
+    />
+    <input
+      class="w-full cursor-pointer"
+      color="gray"
+      data-testid="volume-slider"
+      max="100"
+      min="0"
+      type="range"
+      value="50"
+    />
+  </div>
+</div>
+`;
+
+exports[`slider change updates volume and calls setVolume 1`] = `
+<div>
+  <div
+    class="flex justify-center items-center w-full p-6"
+  >
+    <img
+      src="/src/assets/volumePic.png"
+    />
+    <input
+      class="w-full cursor-pointer"
+      color="gray"
+      data-testid="volume-slider"
+      max="100"
+      min="0"
+      type="range"
+      value="75"
+    />
+  </div>
+</div>
+`;

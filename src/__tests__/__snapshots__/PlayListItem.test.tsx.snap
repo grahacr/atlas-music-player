@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`playlist item returns title, artist, and time 1`] = `
+<div>
+  <div
+    class="grid grid-cols-2 hover:bg-lightpink dark:hover:bg-darkPink p-2 cursor-pointer"
+  >
+    <h2
+      class="font-medium text-dark dark:text-light"
+    >
+      Painted in Blue
+    </h2>
+    <div
+      class="justify-items-end"
+    >
+      <h3
+        class="text-sm text-dark dark:text-light"
+      >
+        194
+      </h3>
+    </div>
+    <h3
+      class="text-sm text-dark dark:text-lightpink"
+    >
+      Soul Canvas
+    </h3>
+  </div>
+</div>
+`;

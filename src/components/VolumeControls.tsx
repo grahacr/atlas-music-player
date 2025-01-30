@@ -28,6 +28,7 @@ export default function VolumeControls({ volume, setVolume}: VolumeControlProps)
                 onChange={handleChange}
                 className="w-full cursor-pointer"
                 color="gray"
+                data-testid="volume-slider"
             />
         </div>
     )
